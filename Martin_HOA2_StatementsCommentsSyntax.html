@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head><title>Hands on Activity 2</title>
+</head>
+
+<body>
+    <div class="heading">
+        <div class="container text-center">
+            <h1>Activity for Statements, Comments <br>
+                 and Syntax</h1>
+        </div>
+    </div>
+
+    <div class="program">
+        <div class="text">
+            <h2>What Program Am I?</h2>
+            <p id="averagenumber">Calculate Your Grades' Average By Interesting Them In The Prompts!</p>
+            <button class="button1" type="button" onclick="averageFinder()">Calculate Average!</button>
+        </div>
+    </div>
+
+<script>
+    function averageFinder() {
+var firstNumber = parseInt(prompt("Enter First Number: ")); //It creates a prompt screen and then enter the number so it can get 1st number
+var secondNumber = parseInt(prompt("Enter Second Number: ")); //Ye once again enter the number so it can get 1st number
+var thirdNumber = parseInt(prompt("Enter Third Number: ")); //Ditto
+var fourthNumber = parseInt(prompt("Enter Fourth Number: ")); //Ok this is the same as the first 3 lines
+var theReal_Number = (firstNumber + secondNumber + thirdNumber + fourthNumber) / 4; //This gets all the numbers then adds them and then divides to get the average
+
+document.getElementById("averagenumber").innerHTML="Your Average for this quarter is " + theReal_Number;
+
+window.alert("Your average is" + theReal_Number);
+}
+
+/* 
+The way this works is in the first var it makes a prompt and then when you enter the number it gets it and 
+moves on the next variable which again creates an another prompt to get your grade again and then it repeats this
+process two more times. The javascript line after this first 4 lines then gets all of the separate numbers then
+adds them together and then divides to get the final number. The last line then changes the text in the p tag which
+has the id averagenumber to show you your average for the quarter.
+*/
+</script>
+
+<style>
+body {
+    background-image: url("https://i.pinimg.com/originals/ef/ff/52/efff524d86712c017a285c9edfec37d9.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    padding-top: 109px;
+    padding-left: 140px;
+}
+div.heading {
+    height: 300px;
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/021/014/822/small_2x/brown-paper-with-stick-tape-isolated-on-transparent-background-realistic-design-element-free-png.png");
+    background-repeat: no-repeat;
+}
+div.program {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 800px;
+    background-image: url(https://clipart-library.com/images/rTjrapzkc.png);
+    background-repeat: no-repeat;
+    background-size: 800px 560px;
+    font-family: Snell Roundhand, cursive;
+}
+div.text {
+    padding-left: 50px;
+    padding-top: 50px;
+    color: white;
+}
+button {
+    background-color: #000000;
+    color: white;
+    font-family: Snell Roundhand, cursive;
+}
+</style>
+
+
+
+</body>
+</html>

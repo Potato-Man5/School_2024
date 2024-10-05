@@ -1,0 +1,31 @@
+<html> 
+<head><title>Javascript Operators</title>
+</head>
+<body>
+<center><h1><font color="red">Javascript Operators</font></h1>
+<p id="Sum"></p>
+<p id="Difference"></p>
+<p id="Product"></p>
+<p id="Quotient"></p>
+<p id="Increment"></p>
+<p id="Decrement"></p>
+</center>
+<script>
+var FirstNumber = 22;
+var SecondNumber =2;
+var sum = FirstNumber + SecondNumber;
+var difference = FirstNumber - SecondNumber;
+var product = FirstNumber * SecondNumber; 
+var quotient = FirstNumber / SecondNumber;
+FirstNumber++;
+SecondNumber--;
+
+document.getElementById("Sum").innerHTML = "THE SUM OF THE TWO NUMBERS IS "  +sum;
+document.getElementById("Difference").innerHTML = "THE DIFFERENCE OF THE TWO NUMBERS IS "  +difference;
+document.getElementById("Product").innerHTML = "THE PRODUCT OF THE TWO NUMBERS IS "  +product;
+document.getElementById("Quotient").innerHTML = "THE QUOTIENT OF THE TWO NUMBERS IS "  +quotient;
+document.getElementById("Increment").innerHTML = "EXAMPLE OF INCREMENT IS "  +FirstNumber;
+document.getElementById("Decrement").innerHTML = "EXAMPLE OF DECREMENT IS "  +SecondNumber;
+</script>
+</body>
+</html>

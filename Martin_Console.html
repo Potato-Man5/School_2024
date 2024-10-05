@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<body>
+<p> HELLO WORLD </p>
+
+<p>Open the console to see discounted price of $50</p>
+<button class="button5" type="button" onclick="calcalateDiscountedPrice()">Price</button>
+
+<script>
+function calcalateDiscountedPrice(originalPrice, discountPercentage) {
+	var discountedPrice = originalPrice - (originalPrice * (discountedPercentage / 100));
+	return discountedPrice;
+}
+
+var originalPrice = 50;
+var discountedPercentage = 20;
+
+var discountedPrice = calcalateDiscountedPrice(originalPrice, discountedPercentage);
+
+console.log("Original Price: $" + originalPrice);
+console.log("Discount Percentage " + discountedPercentage + "%" );
+console.log("Discounted Price: $" + discountedPrice);
+
+document.write("Original Price: $" + originalPrice);
+document.write("Discount Percentage " + discountedPercentage + "%" );
+document.write("Discounted Price: $" + discountedPrice);
+</script>
+
+</body>
+</html>

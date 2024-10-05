@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="math_logo.png" type="image/png">
+    <title>Math | Calculator</title>
+</head>
+<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Martin-Marcelino_Grade3_Calculator.css" rel="stylesheet"/>
+
+<script>
+    // Array of phrases for the text animation
+    const phrases = ["Math Is Fun", "Keep Adding", "Numbers Are Cool", "Learn Every Day", "HENRY LOVES MATH!"];
+    
+    // Function to get a random phrase
+    function getRandomPhrase() {
+        const randomIndex = Math.floor(Math.random() * phrases.length);
+        return phrases[randomIndex];
+    }
+
+    // Function to update the text at specific intervals
+    function updateText() {
+        const textElement = document.getElementById('randomtexts');
+        textElement.textContent = getRandomPhrase(); 
+    }
+    setInterval(updateText, 6000);
+
+
+    const numberimg = ['number0.png', 'number1.png', 'number2.png', 'number3.png', 'number4.png', 'number5.png', 'number6.png', 'number7.png', 'number8.png', 'number9.png'];
+    let operation = ''; // To store the operation type
+    let firstOperand = ''; // To store the first number
+    let secondOperand = ''; // To store the second number
+    let isSecondOperand = false; // Track if we're on the second number
+
+    // Function to create number buttons (images)
+    function generateNumberButtons() {
+        const imageContainer = document.getElementById('imageContainer');
+        imageContainer.innerHTML = ''; // Clear previous images
+
+        // Loop through the number images and create image elements
+        numberimg.forEach((imageSrc, index) => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imageSrc;
+            imgElement.alt = `Number ${index}`;
+            imgElement.addEventListener('click', () => handleNumberClick(index));
+
+            imageContainer.appendChild(imgElement);
+        });
+
+        // Create equals sign image/button
+        const equalsImg = document.createElement('img');
+        equalsImg.src = 'equals.png'; // You need an image for the equals sign
+        equalsImg.alt = 'Equals';
+        equalsImg.addEventListener('click', handleEqualsClick);
+
+        imageContainer.appendChild(equalsImg);
+    }
+
+    // Handle number click
+    function handleNumberClick(number) {
+        if (isSecondOperand) {
+            secondOperand += number;
+            document.getElementById('equals').innerHTML = `Second Number: ${secondOperand}`;
+        } else {
+            firstOperand += number;
+            document.getElementById('equals').innerHTML = `First Number: ${firstOperand}`;
+        }
+    }
+
+    // Handle equals click
+    function handleEqualsClick() {
+        let result;
+        const num1 = parseInt(firstOperand);
+        const num2 = parseInt(secondOperand);
+
+        switch (operation) {
+            case 'add':
+                result = num1 + num2;
+                break;
+            case 'subtract':
+                result = num1 - num2;
+                break;
+            case 'multiply':
+                result = num1 * num2;
+                break;
+            case 'divide':
+                result = num1 / num2;
+                break;
+            default:
+                result = 'Error';
+        }
+
+        document.getElementById('equals').innerHTML = `The Total Number Is: ${result}`;
+        generateResultImages(result);
+    }
+
+    // Generate images that reflect the result
+    function generateResultImages(result) {
+        const resultStr = result.toString();
+        const imageContainer = document.getElementById('imageContainer');
+        imageContainer.innerHTML = ''; // Clear previous images
+
+        for (let char of resultStr) {
+            let imgElement;
+            if (char === '-') {
+                imgElement = document.createElement('img');
+                imgElement.src = 'minus.png'; // Add an image for minus sign if result is negative
+            } else {
+                imgElement = document.createElement('img');
+                imgElement.src = numberimg[parseInt(char)];
+            }
+
+            imgElement.alt = `Number ${char}`;
+            imageContainer.appendChild(imgElement);
+        }
+    }
+
+    // Addition button click
+    function additionFinder() {
+        operation = 'add';
+        isSecondOperand = true;
+        document.getElementById('equals').innerHTML = "Addition: Enter Second Number";
+        generateNumberButtons();
+    }
+
+    // Subtraction button click
+    function subtractionFinder() {
+        operation = 'subtract';
+        isSecondOperand = true;
+        document.getElementById('equals').innerHTML = "Subtraction: Enter Second Number";
+        generateNumberButtons();
+    }
+
+    // Multiplication button click
+    function multiplicationFinder() {
+        operation = 'multiply';
+        isSecondOperand = true;
+        document.getElementById('equals').innerHTML = "Multiplication: Enter Second Number";
+        generateNumberButtons();
+    }
+
+    // Division button click
+    function divisionFinder() {
+        operation = 'divide';
+        isSecondOperand = true;
+        document.getElementById('equals').innerHTML = "Division: Enter Second Number";
+        generateNumberButtons();
+    }
+</script>
+
+<!-- Start of HTML Code -->
+<div class="totalNumber">
+    <div>
+        <p id="equals">The Total Number Is: </p>
+    </div>
+</div>
+
+<div class="image-container" id="imageContainer"></div>
+
+<div class="superhero">
+    <div>
+        <img src="superhero.png">
+        <div class="text" id="randomtexts"></div>
+    </div>
+</div>
+
+
+<div class="additionbutton">
+    <div>
+        <button class="buttonAdd" type="button" onclick="additionFinder()">Addition</button>
+    </div>
+</div>
+
+<div class="subtractionbutton">
+    <div>
+        <button class="buttonSubtract" type="button" onclick="subtractionFinder()">Subtraction</button>
+    </div>
+</div>
+
+<div class="multiplicationfinder">
+    <div>
+        <button class="buttonMultiply" type="button" onclick="multiplicationFinder()">Multiplication</button>
+    </div>
+</div>
+
+<div class="divisionfinder">
+    <div>
+        <button class="buttonDivide" type="button" onclick="divisionFinder()">Division</button>
+    </div>
+</div>
+
+</body>
+</html>

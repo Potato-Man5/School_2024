@@ -1,0 +1,227 @@
+body {
+    background-color: #ffffff;
+    background-image: url("Superherobg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+.main {
+    margin-left: 250px; 
+    padding: 10px;
+}
+div.totalNumber {
+    background-color: #ffffff;
+    text-align: center;
+    border: 5px solid #000000;
+    font-size: 70px;
+}
+/* Math button */
+/* This is for addition button */
+.buttonAdd {
+    background-color: #b81414;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 70px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 10px solid #ffe600;
+    border-radius: 12%;
+}
+
+.buttonAdd:hover {
+    background-color: #81d9ef;
+}
+
+.buttonAdd:active {
+    background-color: #232723;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* This is for subtraction button */
+.buttonSubtract {
+    background-color: #fbff11;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 70px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 10px solid #0c1fcb;
+    border-radius: 12%;
+}
+
+.buttonSubtract:hover {
+    background-color: #ff0d0d;
+}
+
+.buttonSubtract:active {
+    background-color: #e0ea95;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* This is for multiplication button */
+.buttonMultiply {
+    background-color: #5e5d5a;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 70px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 10px solid #000000;
+    border-radius: 12%;
+}
+
+.buttonMultiply:hover {
+    background-color: #70706b;
+}
+
+.buttonMultiply:active {
+    background-color: #5b5e63;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* This is for division button */
+.buttonDivide {
+    background-color: #0c6f0b;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 70px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 10px solid #1d7808;
+    border-radius: 12%;
+}
+
+.buttonDivide:hover {
+    background-color: #000000;
+}
+
+.buttonDivide:active {
+    background-color: #086a12;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+
+/* FOR INTERACTIVENESS */
+/* sidebar */
+.sidebar {
+    background-image: url(sidebarsuperhero.png);
+    background-repeat: repeat-y;
+    background-size: 100% 250px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+.sidebar a {
+    padding: 6px 6px 6px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+@media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+}
+
+
+div.interactiveness {
+    padding-left: 10px;
+}
+div.trivia {
+    padding-bottom: 10px;
+}
+div.quiz {
+    padding-bottom: 10px;
+}
+button.barside {
+    width: 230px;
+    height: 230px;
+    background-color: #ffffff;
+    border: 5px solid #000000;
+}
+.barside:hover {
+    background-color: #c4c2c2;
+}
+
+/* For the superhero and text */
+div.superhero {
+    padding-left: 800px;
+}
+img {
+    position: absolute;
+    height: 600px;
+}
+.superhero {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    animation: moveUpDown 2s infinite;
+}
+@keyframes moveUpDown {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 100px;
+    }
+    100% {
+        top: 0;
+    }
+}
+div.text {
+    padding-left: 800px;
+}
+.text {
+    color: #ffffff;
+    font-size: 30px;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    opacity: 0;
+    animation: showText 3s infinite;
+}
+@keyframes showText {
+    0%, 50% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

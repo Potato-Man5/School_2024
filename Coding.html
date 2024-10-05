@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<body>
+<p> THIS IS THE HEADING !! </p>
+
+<h2> This line is the first sentence of the paragraph in this program. <br
+> This is the second line. <br>
+And this is the last line.</h2>
+
+<p>What is Cagil's favorite number?</p>
+<p id="code">You have a 33.3% chance to get it!</p>
+<button class="button1" type="button" onclick="firstNumber()">5</button>
+<button class="button2" type="button" onclick="secondNumber()">2</button>
+<button class="button3" type="button" onclick="thirdNumber()">9</button>
+<button class="button4" type="button" onclick="resetNumber()">Reset</button>
+<p>Open the console to see discounted price of $50</p>
+<button class="button5" type="button" onclick="calcalateDiscountedPrice()">Price</button>
+
+<script>
+var x = 5;
+var y = 6;
+var z = "CAGIL PHILIP";
+//concatenation
+document.write("BEST CODER " + y + x + " Martin ");
+document.write(y + x + x + x + x + x + 100);
+//favorite number
+function firstNumber() {
+document.getElementById("code").innerHTML="You got it!";
+var button = document.getElementById("button2","button3");
+	button.style.visibility = "hidden"
+}  
+function secondNumber() {
+document.getElementById("code").innerHTML="You lose, you didnt get it!"
+}
+function thirdNumber() {
+document.getElementById("code").innerHTML="You lose, you didnt get it! Not even close, skill issue Henry" 
+}
+function resetNumber() {
+document.getElementById("code").innerHTML="You have a 33.3% chance to get it!" 
+}
+
+function calcalateDiscountedPrice(originalPrice, discountPercentage) {
+	var discountedPrice = originalPrice - (originalPrice * (discountedPercentage / 100));
+	return discountedPrice;
+}
+
+var originalPrice = 50;
+var discountedPercentage = 20;
+
+var discountedPrice = calcalateDiscountedPrice(originalPrice, discountedPercentage);
+
+console.log("Original Price: $" + originalPrice);
+console.log("Discount Percentage " + discountedPercentage + "%" );
+console.log("Discounted Price: $" + discountedPrice);
+</script>
+
+</body>
+</html>
