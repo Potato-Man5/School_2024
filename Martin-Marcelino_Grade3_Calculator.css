@@ -15,6 +15,27 @@ div.totalNumber {
     border: 5px solid #000000;
     font-size: 70px;
 }
+/* NAVBAR */
+nav.navbar {
+    background: -webkit-linear-gradient(to right, rgb(14, 162, 11), rgb(255, 213, 0));
+    background: linear-gradient(to right, rgb(14, 162, 11), rgb(255, 213, 0));
+    color: #ffffff;
+    padding-left: 230px;
+    border: 0px;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #000000; /* Default color for non-active links */
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #ffffff; /* Color for hover effect */
+}
+li.active {
+    background: #0ea20b;
+}
+p.navbartext {
+    color: #ffffff
+}
+
 /* Math button */
 /* This is for addition button */
 .buttonAdd {
@@ -125,16 +146,13 @@ div.totalNumber {
 /* FOR INTERACTIVENESS */
 /* sidebar */
 .sidebar {
-    background-image: url(sidebarsuperhero.png);
-    background-repeat: repeat-y;
-    background-size: 100% 250px;
     height: 100%;
     width: 250px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #ffffff;
+    background-color: rgb(14, 162, 11);
     overflow-x: hidden;
     padding-top: 20px;
 }
@@ -166,18 +184,35 @@ div.quiz {
 button.barside {
     width: 230px;
     height: 230px;
-    background-color: #ffffff;
+    background-color: rgb(255, 213, 0);
     border: 5px solid #000000;
 }
 .barside:hover {
     background-color: #c4c2c2;
 }
 
+/* MATH GAME/QUIZ */
+div.mathgame {
+    padding-left: 270px;
+}
+div.questiondiv {
+    padding-bottom: 30px;
+}
+div.question {
+    background-color: #ffffff;
+    width: 800px;
+    height: 200px;
+    border: 3px solid #e59c16;
+    border-radius: 7%;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+
 /* For the superhero and text */
 div.superhero {
     padding-left: 800px;
 }
-img {
+img.images {
     position: absolute;
     height: 600px;
 }

@@ -1,139 +1,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="shortcut icon" href="math_logo.png" type="image/png">
+        <link rel="shortcut icon" href="logostpaul_png.png" type="image/png">
         <title>Math | Calculator</title>
     </head>
 <body>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="Martin-Marcelino_Grade3_Calculator.js"></script>
     <link href="Martin-Marcelino_Grade3_Calculator.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 
-<script>
-    // Button sounds that doesnt work
-    // document.getElementById("soundButton").addEventListener("click", function() {
-    //         var audio = document.getElementById("clickSound");
-    //         audio.play();
-    //     });
-
-    // For the random text that the hero says
-    // Array of phrases for the text animation
-     const phrases = ["Math Is Fun", "Keep Adding", "Numbers Are Cool", "Learn Every Day", "HENRY LOVES MATH!"];
-    // Function to get a random phrase
-    function getRandomPhrase() {
-        const randomIndex = Math.floor(Math.random() * phrases.length);
-        return phrases[randomIndex];
-    }
-    // Function to update the text at specific intervals
-    function updateText() {
-        const textElement = document.getElementById('randomtexts');
-        textElement.textContent = getRandomPhrase(); 
-    }
-    setInterval(updateText, 3000);
-
-
-    // for finding addition, next one is subtraction, third one is multiplication and last is division
-    function additionFinder() {
-        document.getElementById("img").src="superheroironman.png";
-        var firstNumber = parseInt(prompt("Place your first number you want to add!"));
-        var secondNumber = parseInt(prompt("Place your second number you want to add!"));
-        var equalNumber = (firstNumber + secondNumber);
-        document.getElementById("equals").innerHTML="The Total Number Is: " + equalNumber;
-    }
-    function subtactionFinder() {
-        document.getElementById("img").src="superhero.png";
-        var firstNumber = parseInt(prompt("Place your first number you want to subtract!"));
-        var secondNumber = parseInt(prompt("Place your second number you want to subtract!"));
-        var equalNumber = (firstNumber - secondNumber);
-        document.getElementById("equals").innerHTML="The Total Number Is: " + equalNumber;
-    }
-    function multiplicationFinder() {
-        document.getElementById("img").src="superherobatman.png";
-        var firstNumber = parseInt(prompt("Place your first number you want to multiply!"));
-        var secondNumber = parseInt(prompt("Place your second number you want to multiply!"));
-        var equalNumber = (firstNumber * secondNumber);
-        document.getElementById("equals").innerHTML="The Total Number Is: " + equalNumber
-    }
-    function divisionFinder() {
-        document.getElementById("img").src="superherohulk.png";
-        var firstNumber = parseInt(prompt("Place your first number you want to divide!"));
-        var secondNumber = parseInt(prompt("Place your second number you want to divide!"));
-        var equalNumber = (firstNumber / secondNumber);
-        document.getElementById("equals").innerHTML="The Total Number Is: " + equalNumber
-    }
-
-    // Array of phrases for the random fun fact
-    const mathfacts = [ "A circle has 360 degrees!",
-    "The number zero was invented in India.",
-    "Pi (π) never ends!",
-    "A prime number can only be divided by 1 and itself.",
-    "The Fibonacci sequence appears in nature!",
-    "Every even number greater than 2 is the sum of two primes.",
-    "The number 7 is the most popular 'lucky' number.",
-    "The sum of all angles in a triangle is always 180°.",
-    "Did you know a googol is a 1 followed by 100 zeros?",
-    "Negative numbers were once considered impossible!"];
-    // Function to get a random phrase
-    function randomizedFact() {
-        const randomIndex = Math.floor(Math.random() * mathfacts.length);
-        const randomFact = mathfacts[randomIndex];
-        window.alert(randomFact);
-        return randomFact;
-    }
-
-    function hideMain() {
-        var main = document.getElementById("main");
-        var mathgame = document.getElementById("mathquiz");
-
-        if (main.style.display === "none") {
-            main.style.display = "block";
-            mathgame.style.display = "none";
-        } else {
-            main.style.display = "none";
-            mathgame.style.display = "block";
-        }
-    }
-
-    // For random themes
-    function randomThemes() {
-    const themes = [
-        {
-            backgroundImage: "url('Superherobg.jpg')",
-            backgroundImageSidebar: "url('sidebarsuperhero.png')",
-            imgSrc: "superheroironman.png",
-            backgroundColor: "#000000"
-        },
-        {
-            backgroundImage: "url('galaxybg.png')",
-            backgroundImageSidebar: "url('sidebarspace.png')",
-            imgSrc: "spaceastronaut.png",
-            backgroundColor: "#000000"
-        },
-        {
-            backgroundImage: "url('navybg.webp')",
-            backgroundImageSidebar: "url('sidebarnavy.png')",
-            imgSrc: "navyadmiral.png",
-            backgroundColor: "#00bbff"
-        },
-        {
-            backgroundImage: "url('oceanbg.png')",
-            backgroundImageSidebar: "url('sidebarocean.png')",
-            imgSrc: "oceanfish.png",
-            backgroundColor: "#00bbff"
-        }
-    ];
-
-    // Generate a random index to pick a random theme
-        const randomIndex = Math.floor(Math.random() * themes.length);
-
-    // Apply the selected theme to the body background and the image src
-        document.body.style.backgroundImage = themes[randomIndex].backgroundImage;
-        document.body.style.backgroundColor = themes[randomIndex].backgroundColor;
-        document.getElementById("img").src = themes[randomIndex].imgSrc;
-        document.querySelector('.sidebar').style.backgroundImage = themes[randomIndex].backgroundImageSidebar;
-    }   
-</script>
-
+<div>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a class="navbar-brand" href="logostpaul_png.png" target="_blank" rel="noreferrer" title="Logo" class="me-3 d-none d-md-inline-block"></a>
+              <img src="logostpaul_png.png" alt="Logo" height="70"> 
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li class="active"><a class="active" href="Martin-Marcelino_Grade3_Calculator.html">Home</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</div>
 
 <!--Start of HTML Code-->    
 <div class="main" id="main">
@@ -145,7 +42,7 @@
 
     <div class="superhero">
         <div>
-            <img id="img" src="superheroironman.png">
+            <img class="images" id="img" src="superheroironman.png">
             <div class="text" id="randomtexts"></div>
         </div>
     </div>
@@ -177,13 +74,43 @@
 </div>
 
 <!-- Math Game/Quiz -->
- <div class="mathquiz" style="display: none;">
-        <p>What is Cagil's favorite number?</p>
-        <p id="code">You have a 33.3% chance to get it!</p>
-        <button class="button1" type="button" onclick="firstNumber()">5</button>
-        <button class="button2" type="button" onclick="secondNumber()">2</button>
-        <button class="button3" type="button" onclick="thirdNumber()">9</button>
-        <button class="button4" type="button" onclick="resetNumber()">Reset</button>
+ <div class="mathgame" id="mathgame" style="display: none;">
+    <div class="questiondiv">
+        <div class="question">
+            <p>What is 10+10?</p>
+            <p id="code">You have a 33.3% chance to get it!</p>
+            <button class="button1" type="button" onclick="firstNumber()">20</button>
+            <button class="button2" type="button" onclick="secondNumber()">1010</button>
+            <button class="button3" type="button" onclick="thirdNumber()">22</button>
+        </div>
+    </div>
+    <div class="questiondiv">
+        <div class="question">
+            <p>What is 5-1?</p>
+            <p id="code">You have a 33.3% chance to get it!</p>
+            <button class="button1" type="button" onclick="firstNumber()">4</button>
+            <button class="button2" type="button" onclick="secondNumber()">2</button>
+            <button class="button3" type="button" onclick="thirdNumber()">9</button>
+        </div>
+    </div>
+    <div class="questiondiv">
+        <div class="question">
+            <p>What 6+4?</p>
+            <p id="code">You have a 33.3% chance to get it!</p>
+            <button class="button1" type="button" onclick="firstNumber()">10</button>
+            <button class="button2" type="button" onclick="secondNumber()">7</button>
+            <button class="button3" type="button" onclick="thirdNumber()">9</button>
+        </div>
+    </div>
+    <div class="questiondiv">
+        <div class="question">
+            <p>What is the number after 3?</p>
+            <p id="code">You have a 33.3% chance to get it!</p>
+            <button class="button1" type="button" onclick="firstNumber()">4</button>
+            <button class="button2" type="button" onclick="secondNumber()">2</button>
+            <button class="button3" type="button" onclick="thirdNumber()">5</button>
+        </div>
+    </div>
  </div>
 
 <div class="sidebar">
