@@ -1,4 +1,10 @@
-    // Button sounds that doesnt work
+    /* After asking grade 3 students what they want for the calculator 
+	they kept yelling skibid toilet at me and saying "hi dad and hi mom"
+	at me, I just had to make it as the main theme */
+	
+	
+	
+	// Button sounds that doesnt work
     // document.getElementById("soundButton").addEventListener("click", function() {
     //         var audio = document.getElementById("clickSound");
     //         audio.play();
@@ -85,6 +91,11 @@
     // For random themes
     function randomThemes() {
     const themes = [
+		{
+            backgroundImage: "url('skibiditoiletbg.webp')",
+            imgSrc: "skibiditoilet.png",
+            backgroundColor: "#000000"
+        },
         {
             backgroundImage: "url('Superherobg.jpg')",
             imgSrc: "superheroironman.png",
