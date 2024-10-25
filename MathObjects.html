@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="potato.jpg" type="image/png">
+        <title>Math Objects</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    </head>
+
+    <style>
+    body {
+        background-color: #37393b;
+        margin: 0;
+    }
+    div.content {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    h1 {
+        color: #d9d1d1; 
+    }
+    h1.object {
+        color: #d9d1d1; 
+        font-size: 44px;
+        padding-left: 20px;
+    }
+    p.explanation {
+        color: #d9d1d1;
+        font-size: 40x;
+    }
+    p.jsobject {
+        color: #d9d1d1;
+        font-size: 40x;
+    }
+    div.rounddiv {
+        margin-left: 20px;
+        margin-right: 800px;
+        background-color: #181818;
+        border: outset;
+    }
+    div.rounddiv2 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+    }
+
+    /* NAVBAR */
+    nav.navbar {
+        background: -webkit-linear-gradient(to right, #54585b, #181818);
+        background: linear-gradient(to right, #54585b, #181818);
+        color: #ffffff;
+        border: 0px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }     
+    .jumbotron {
+        margin-bottom: 0;
+        padding: 0.5%;
+    }
+    footer {
+        background-color: #f2f2f2;
+        padding: 15px;
+    }
+    </style>
+
+    <body>
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1>Math Objects Javascript</h1>   
+            </div>
+          </div>
+          
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="potato_logo.png" target="_blank" rel="noreferrer" title="Logo" class="me-3 d-none d-md-inline-block"></a>
+                    <img src="potato_logo.png" alt="Logo" height="50"> 
+                </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li><a href="index.html">Home</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        
+        <div class="content">
+            <div>
+                <h1 class="object">PI Object</h1>
+                <p class="explanation">The function of Math.PI is to give out the first few digits of Pi which is the 
+                circumference of a circle.</p>
+                <p class="jsobject" id="demo"></p>
+                <hr>
+            </div>
+
+            <div>        
+                <h1 class="object">Rounding Off Object</h1>
+                <p class="explanation">The function of Math.round is to round off the decimals of a number.</p>
+                <p class="jsobject" id="demo1"></p>
+                <p class="jsobject" id="demo2"></p>
+                <div class="rounddiv">
+                    <div class="rounddiv2">
+                        <p class="explanation">If you want to round off numbers yourself, press the button:</p>
+                        <button class="button1" id="buttonround" type="button" onclick="roundOff()">PRESS TO ADD THE NUMBER YOU WANT TO ROUND OFF</button>
+                        <p class="jsobject" id="equals">The Rounded Off Number Is: </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <div>  
+                <h1 class="object">Power Object</h1>
+                <p class="explanation">The function of Math.pow is it displays the value of x to the power of y.
+                    <br> var x = 5 <br> var y = 3
+                </p>      
+                <p class="jsobject" id="demo3"></p>
+                <div class="rounddiv">
+                    <div class="rounddiv2">
+                        <p class="explanation">If you want to get the power numbers yourself, press the button:</p>
+                        <button class="button2" id="buttonpower" type="button" onclick="powerOff()">PRESS TO ADD THE NUMBER YOU WANT TO GET THE POWER OFF</button>
+                        <p class="jsobject" id="equals2">The Powered Number Is: </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <div>    
+                <h1 class="object">Square Root Object</h1>
+                <p class="explanation">The function of Math.sqrt is it displays the square root of x.
+                    <br> var x = 36
+                </p>          
+                <p class="jsobject" id="demo4"></p>
+                <div class="rounddiv">
+                    <div class="rounddiv2">
+                        <p class="explanation">If you want to get the square root of a number yourself, press the button:</p>
+                        <button class="button3" id="buttonsquare" type="button" onclick="squareRoot()">PRESS TO ADD THE NUMBER YOU WANT TO GET THE SQUARE ROOT OF</button>
+                        <p class="jsobject" id="equals3">The Square Root Of The Number Is: </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+            <div>    
+                <h1 class="object">Minimum & Maximum Object</h1>    
+                <p class="explanation">The function of Math.min and Math.max is it gets the minimum and maximum number of an array of numbers.
+                    <br> var x = 0, 150, 5363, 53, 42, 45, -332 -200 <br> var y = 324, 425, 54, 0, 454, 6455, 53
+                </p>          
+                <p class="jsobject" id="demo5"></p>
+                <p class="jsobject" id="demo6"></p>
+                <div class="rounddiv">
+                    <div class="rounddiv2">
+                        <p class="explanation">If you want to get the minimum number in an array of numbers yourself, press the button:</p>
+                        <button class="button4" id="buttonminimum" type="button" onclick="minimumNumber()">PRESS TO ADD THE NUMBER YOU WANT TO GET MINIMUM OF</button>
+                        <p class="jsobject" id="equals4">The Minimum Number In The Array Is: </p>
+                    </div>
+                </div>
+                <div class="rounddiv">
+                    <div class="rounddiv2">
+                        <p class="explanation">If you want to get the minimum number in an array of numbers yourself, press the button:</p>
+                        <button class="button5" id="buttonmaxium" type="button" onclick="maximumNumber()">PRESS TO ADD THE NUMBER YOU WANT TO GET MAXIMUM OF</button>
+                        <p class="jsobject" id="equals5">The Maximum Number In The Array Is: </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        document.getElementById("demo").innerHTML = "As we can see the number of Pi is: " + Math.PI
+        document.getElementById("demo1").innerHTML = "As we can see the rounded off number of 4.4 is: " + Math.round(4.4)
+        document.getElementById("demo2").innerHTML = "As we can see the rounded off number of 4.5 is: " + Math.round(4.5)
+
+        function roundOff() {
+        var firstNumber = parseInt(prompt("Place your number you want to round off:"));
+        var equalNumber = Math.round(firstNumber);
+        document.getElementById("equals").innerHTML= "The Rounded Off Number Is: " + equalNumber
+        }
+
+        document.getElementById("demo3").innerHTML = "The Power Number of X to Y Is: " + Math.pow(5,3)
+
+        function powerOff() {
+        var firstNumber = parseInt(prompt("Place your number you want to get the power of:"));
+        var secondNumber = parseInt(prompt("Place your number you want to get the power of:"));
+        var equalNumber = Math.pow(firstNumber, secondNumber);
+        document.getElementById("equals2").innerHTML= "The Rounded Off Number Is: " + equalNumber
+        }
+
+        document.getElementById("demo4").innerHTML = "The Rounded Off Number Is: " + Math.sqrt(36)
+
+        function squareRoot() {
+        var firstNumber = parseInt(prompt("Place your number you want to get the square root of:"));
+        var equalNumber = Math.sqrt(firstNumber);
+        document.getElementById("equals3").innerHTML= "The Square Root Of The Number Is: " + equalNumber
+        }
+
+        document.getElementById("demo5").innerHTML = "The Minimum Number Of The Array Is: " + Math.min(0, 150, 5363, 53, 42, 45, -332 -200)
+        document.getElementById("demo6").innerHTML = "The Maximum Number Of The Array Is: " + Math.max(324, 425, 54, 0, 454, 6455, 53)
+
+        function minimumNumber() {
+        var firstNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var secondNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var thirdNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var fourthNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var fifthNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var sixthNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var seventhNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var eightNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var equalNumber = Math.min(firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber, sixthNumber, seventhNumber, eightNumber);
+        document.getElementById("equals4").innerHTML= "The Minimum Number In The Array Is: " + equalNumber
+        }
+
+        function maximumNumber() {
+        var firstNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var secondNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var thirdNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var fourthNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var fifthNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var sixthNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var seventhNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var eightNumber = parseInt(prompt("Place your number you want to get the minimum of:"));
+        var equalNumber = Math.max(firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber, sixthNumber, seventhNumber, eightNumber);
+        document.getElementById("equals5").innerHTML= "The Maximum Number In The Array Is: " + equalNumber
+        }
+    </script>
+
+</html>
