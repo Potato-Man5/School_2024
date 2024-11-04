@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="basketball_logo.png" type="image/png">
+        <title>Basketball | Average Points</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <div class="container text-center">
+                <h1><img src="basketball_header.webp" height="70">Basketball Players Score</h1>   
+            </div>
+          </div>
+          
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <a class="navbar-brand" href="potato_logo.png" target="_blank" rel="noreferrer" title="Logo" class="me-3 d-none d-md-inline-block"></a>
+                    <img src="potato_logo.png" alt="Logo" height="50"> 
+                </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li><a href="index.html">Home</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        
+
+
+        <div class="playerScores" id="playerScoreTable">
+            <h1 class="sections">Teams and Scores</h1>
+            <div class="table">
+                <div class="dropDown">
+                    <select id="positionSelect" onchange="updateContent()">
+                        <option value="p_sGuard">P. guard | VS | S. guard</option>
+                        <option value="p_sForward">P. forawrd | VS | S. forward</option>
+                    </select>
+                </div>
+                <div class="foulTable">
+                <table class="foul">
+                    <tr>
+                    <td class="leftFoul" id="foul1">2</td>
+                    <td>FOULS</td>
+                    <td class="rightFoul" id="foul2">5</td>
+                    </tr>
+                </table>
+                </div>
+                <table class="scoreboard">
+                    <tr>
+                    <td class="city">Cembo Taguig City</td>
+                    <td class="team" id="team1">P.guard</td>
+                    <td class="score" id="score1">15.6</td>
+                    <td class="team2" id="team2">S.guard</td>
+                    <td class="score" id="score2">13.7</td>
+                    <td class="quarter">4TH</td>
+                    <td class="time">0:00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    <hr>
+
+        <h1 class="sections">Statistics</h1>
+        <div class="mathObjects" id="mathObjectTask">
+          <h1>Rounded Off to Integer</h1>
+          <p>The score of the basketball team's score when rounded off can be seen in the following:</p>
+          <p id="pGuardAve"></p>
+          <p id="sGuardAve"></p>
+          <p id="centerAve"></p>
+          <p id="sFowardAve"></p>
+          <p id="pFowardAve"></p>
+
+          <h1>Lowest and Highest Rounded Off Score</h1>
+          <p>The team with the lowest number is the S. guard coming in at:</p>
+          <p id="lowestNumber"></p>
+          <p>Meanwhile the team with the highest score is the center:</p>
+          <p id="highestNumber"></p>
+
+          <h1>Total and Square Root</h1>
+          <p>Combined the total amount of points gotten by all of the teams equate to:</p>
+          <p id="totalRoundedScore"></p>
+          <p>And square rooting the total amount will result in the number:</p>
+          <p id="totalRoundedSqrt"></p>
+        </div>
+    </body>
+
+
+
+    <script>
+        var pGuard = 15.6; 
+        var sGuard = 13.7;
+        var center = 20.7;
+        var sForward = 16.3;
+        var pForward = 12.9;
+
+        document.getElementById("pGuardAve").innerHTML = Math.round(pGuard);
+        document.getElementById("sGuardAve").innerHTML = Math.round(sGuard);
+        document.getElementById("centerAve").innerHTML = Math.round(center);
+        document.getElementById("sFowardAve").innerHTML = Math.round(sForward);
+        document.getElementById("pFowardAve").innerHTML = Math.round(pForward);
+        
+        document.getElementById("lowestNumber").innerHTML = Math.min(16, 14, 21, 16, 13);
+        document.getElementById("highestNumber").innerHTML = Math.max(16, 14, 21, 16, 13);
+
+        var totalRounded = 16 + 14 + 21 + 16 + 13;
+        document.getElementById("totalRoundedScore").innerHTML = totalRounded;
+        document.getElementById("totalRoundedSqrt").innerHTML = Math.sqrt(totalRounded);
+
+        function updateContent() {
+            const select = document.getElementById("positionSelect");
+            const team1 = document.getElementById("team1");
+            const team2 = document.getElementById("team2");
+            const score1 = document.getElementById("score1");
+            const score2 = document.getElementById("score2");
+            const foul1 = document.getElementById("foul1");
+            const foul2 = document.getElementById("foul2");
+
+            if (select.value === "p_sGuard") {
+                team1.innerHTML = "P. guard";
+                team2.innerHTML = "S. guard";
+                score1.innerHTML = "15.6";
+                score2.innerHTML = "13.7";
+                foul1.innerHTML = "2";
+                foul2.innerHTML = "5";
+            } else if (select.value === "p_sForward") {
+                team1.innerHTML = "P. forward";
+                team2.innerHTML = "S. forward";
+                score1.innerHTML = "16.3";
+                score2.innerHTML = "12.9";
+                foul1.innerHTML = "8";
+                foul2.innerHTML = "1";
+            }
+        }
+    </script>    
+    
+    <style>
+    body {
+        background-color: #eb7819;
+        margin: 0;
+    }
+    h1 {
+        color: #d9d1d1; 
+    }
+    h1.sections {
+        color: #000000;
+        font-size: 40px;
+        padding-left: 30px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    p {
+        font-size: 19px;
+    }
+    div.mathObjects {
+        padding-left: 10px;
+        font-family: Itim;
+        background-image: url(basketball_net.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 23%;
+    }
+
+    
+    
+    div.dropDown {
+        padding-bottom: 35px;
+        font-size: 20px;
+    }
+    div.playerScores {
+        background-image: url(basketball_court.png);
+        background-size: cover;
+        padding-bottom: 50%;
+        padding-bottom: 20%;
+    }
+    table.foul {
+        background-color: rgb(202, 198, 198);
+        font-size: 20px;
+    }
+    div.foulTable {
+        padding-left: 380px;
+    }
+    td.leftFoul {
+        padding-right: 76px;
+    }
+    td.rightFoul {
+        padding-left: 76px;
+    }
+    div.table {
+        padding-top: 23%;
+        padding-left: 25%;
+        font-size: 30px;
+    }
+    table {
+        border:5px solid rgb(202, 198, 198);
+    }
+    td.city {
+        background-color: #085e26;
+        color: #ffffff;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    td.team {
+        background-color: #004880;
+        color: #ffffff;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    td.team2 {
+        background-color: #800000;
+        color: #ffffff;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    td.score {
+        background-color: #ffffff;
+        color: #000000;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    td.quarter {
+        background-color: #343333;
+        color: #eae12e;
+        padding-left: 5px;
+        padding-right: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    td.time {
+        background-color: #343333;
+        color: #f3ecec;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+
+    /* NAVBAR */
+    nav.navbar {
+        background: -webkit-linear-gradient(to right, #004880, #b00606);
+        background: linear-gradient(to right, #004880, #b00606);
+        color: #ffffff;
+        border: 0px;
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }     
+    .jumbotron {
+        margin-bottom: 0;
+        padding: 0.5%;
+    }
+    footer {
+        background-color: #f2f2f2;
+        padding: 15px;
+    }
+    </style>
+</html>
