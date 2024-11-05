@@ -42,6 +42,7 @@
                 <div class="dropDown">
                     <select id="positionSelect" onchange="updateContent()">
                         <option value="p_sGuard">P. guard | VS | S. guard</option>
+                        <option value="center">center | VS | S. guard</option>
                         <option value="p_sForward">P. forawrd | VS | S. forward</option>
                     </select>
                 </div>
@@ -97,25 +98,32 @@
 
 
     <script>
+		<!--Variables for the math objects -->
         var pGuard = 15.6; 
         var sGuard = 13.7;
         var center = 20.7;
         var sForward = 16.3;
         var pForward = 12.9;
-
+		
+		<!--For rounding off the variables -->
         document.getElementById("pGuardAve").innerHTML = Math.round(pGuard);
         document.getElementById("sGuardAve").innerHTML = Math.round(sGuard);
         document.getElementById("centerAve").innerHTML = Math.round(center);
         document.getElementById("sFowardAve").innerHTML = Math.round(sForward);
         document.getElementById("pFowardAve").innerHTML = Math.round(pForward);
         
-        document.getElementById("lowestNumber").innerHTML = Math.min(16, 14, 21, 16, 13);
-        document.getElementById("highestNumber").innerHTML = Math.max(16, 14, 21, 16, 13);
+		<!--Code to get the highest amd lowest number of the variables -->
+        document.getElementById("lowestNumber").innerHTML = Math.min(Math.round(pGuard, sGuard, center, sForward, pForward));
+        document.getElementById("highestNumber").innerHTML = Math.max(Math.round(pGuard, sGuard, center, sForward, pForward));
 
-        var totalRounded = 16 + 14 + 21 + 16 + 13;
+	
+		<!--Code to get the total number of the variables and to square root them -->
+        var totalRounded = Math.round(pGuard + sGuard + center + sForward + pForward);
         document.getElementById("totalRoundedScore").innerHTML = totalRounded;
         document.getElementById("totalRoundedSqrt").innerHTML = Math.sqrt(totalRounded);
-
+		
+		
+		<!--Entire code the for the select and option html tags which you can select the game and see the numbers got by each team-->
         function updateContent() {
             const select = document.getElementById("positionSelect");
             const team1 = document.getElementById("team1");
@@ -132,6 +140,13 @@
                 score2.innerHTML = "13.7";
                 foul1.innerHTML = "2";
                 foul2.innerHTML = "5";
+            } else if (select.value === "center") {
+                team1.innerHTML = "center";
+                team2.innerHTML = "S. forward";
+                score1.innerHTML = "20.7";
+                score2.innerHTML = "0";
+                foul1.innerHTML = "3";
+                foul2.innerHTML = "20";
             } else if (select.value === "p_sForward") {
                 team1.innerHTML = "P. forward";
                 team2.innerHTML = "S. forward";
@@ -144,6 +159,7 @@
     </script>    
     
     <style>
+	
     body {
         background-color: #eb7819;
         margin: 0;
